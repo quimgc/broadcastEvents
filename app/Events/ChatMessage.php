@@ -33,6 +33,6 @@ class ChatMessage implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new Channel('new-message');
+        return new PrivateChannel('new-message');
     }
 }
