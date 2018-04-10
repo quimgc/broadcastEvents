@@ -24,4 +24,10 @@ Route::get('/message', function() {
     Event::dispatch(new ChatMessage('Missatge de prova'));
 
 //    event(new ChatMessage());
+
+
+});
+
+Route::get('chat/1', function() {
+   return view('chat');
 });
