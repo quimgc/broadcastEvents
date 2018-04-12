@@ -36,6 +36,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/chat', function () {
-    return view('chatvue');
+Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('/chat', function () {
+        return view('chatvue');
+    });
+
+    Route::post('/chat_message', 'ChatMessagesController@store');
+
 });

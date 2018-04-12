@@ -17,5 +17,7 @@ Broadcast::channel('App.User.{id}', function ($user, $id) {
 
 
 Broadcast::channel('new-message', function ($user) {
-    return true;
+//    return true;
+
+    return ['id' => $user->id, 'name' => $user->name];
 });
